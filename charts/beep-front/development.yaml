@@ -1,6 +1,5 @@
 image:
-    tag: "1.2.0"
-
+  tag: "591c484a-development"
 ingress:
   hosts:
     - host: 'development.hponthieu.com'
