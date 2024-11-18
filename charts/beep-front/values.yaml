@@ -1,0 +1,24 @@
+replicaCount: 1
+imagePullSecrets:
+  - name: beep-registry
+resources: {}
+service:
+  type: ClusterIP
+  port: 80
+image:
+  pullPolicy: Always
+  port: 8080
+  repository: 'hugo08/beep-front-staging'
+  tag: "1.2.12"
+
+ingress:
+  enabled: true
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  tls:
+    enabled: false
+  hosts:
+    - host: 'staging.beep.ovh'
+      paths:
+        - /

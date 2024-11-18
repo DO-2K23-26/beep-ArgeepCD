@@ -1,0 +1,8 @@
+image:
+  repository: 'hugo08/beep-front-staging'
+
+ingress:
+  hosts:
+    - host: 'staging.hponthieu.com'
+      paths:
+        - /
