@@ -13,7 +13,7 @@ spec:
           - environment: production
   template:
     metadata:
-      name: '{{environment}}'
+      name: 'front-{{environment}}'
     spec:
       project: beep
       source:

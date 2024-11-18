@@ -1,5 +1,5 @@
 image:
-  repository: 'milou666/beep-front'
+    tag: "1.2.0"
 
 ingress:
   hosts:

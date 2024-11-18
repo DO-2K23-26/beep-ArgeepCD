@@ -1,5 +1,5 @@
 image:
-  repository: 'hugo08/beep-front-staging'
+    tag: "1.2.0"
 
 ingress:
   hosts:

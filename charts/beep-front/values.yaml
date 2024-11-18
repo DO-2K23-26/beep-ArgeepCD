@@ -8,8 +8,8 @@ service:
 image:
   pullPolicy: Always
   port: 8080
-  repository: 'hugo08/beep-front-staging'
-  tag: "1.2.12"
+  repository: 'milou666/beep-front'
+  tag: ""
 
 ingress:
   enabled: true
