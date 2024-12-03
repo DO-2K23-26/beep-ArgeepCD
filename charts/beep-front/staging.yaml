@@ -1,5 +1,5 @@
 image:
-  tag: "3b7bb666-staging"
+  tag: "02354415-staging"
 ingress:
   hosts:
     - host: 'staging.beep.ovh'
