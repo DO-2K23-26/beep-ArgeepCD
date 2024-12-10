@@ -11,4 +11,4 @@ ingress:
     - host: api-development.beep.ovh
       paths: ['/']
 image:
-  tag: "e012c3a3-development"
+  tag: "15f856c0-development"
