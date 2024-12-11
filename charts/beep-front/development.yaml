@@ -1,5 +1,5 @@
 image:
-  tag: "4a952583-development"
+  tag: "4689b25f-development"
 ingress:
   hosts:
     - host: 'development.beep.ovh'
