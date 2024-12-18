@@ -11,4 +11,4 @@ ingress:
     - host: api-staging.beep.ovh
       paths: ['/']
 image:
-  tag: "d0c15d90-staging"
+  tag: "92c0759c-staging"
