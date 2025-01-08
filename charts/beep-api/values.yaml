@@ -8,7 +8,7 @@ environment: "prod"
 
 observability:
   enabled: false
-  otlp_endpoint: ''
+  otlp_endpoint: 'http://tempo.monitoring.svc.cluster.local:4318/v1/traces'
 
 service:
   port: 80
