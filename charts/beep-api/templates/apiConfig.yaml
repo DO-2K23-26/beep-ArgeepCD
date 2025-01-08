@@ -11,3 +11,9 @@ data:
   SESSION_DRIVER: 'cookie'
   NODE_ENV: 'production'
   FRONTEND_URL: '{{ .Values.frontendUrl }}'
+  APP_VERSION: '{{ .Chart.AppVersion }}'
+  ENVIRONMENT: '{{ .Values.environment }}'
+  {{- if .Values.observability.enabled }}
+  OTLP_ENVIRONMENT: '{{ .Values.observability.otlp_endpoint }}'
+  {{- end }}
+  OTLP_ENDPOINT: 

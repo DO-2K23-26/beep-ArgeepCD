@@ -4,6 +4,11 @@ image:
   repository: milou666/beep-api
   tag: ""
 
+environment: "prod"
+
+observability:
+  enabled: false
+  otlp_endpoint: ''
 
 service:
   port: 80
