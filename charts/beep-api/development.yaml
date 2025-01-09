@@ -1,8 +1,11 @@
 frontendUrl: https://development.beep.ovh
 environment: "development"
 observability:
-  enabled: true
-  otlp_endpoint: 'http://tempo.monitoring.svc.cluster.local:4318/v1/traces'
+  tempo:
+    enabled: true
+  loki:
+    enabled: true
+    logLevel: "debug"
 secret:
   appKey: AgBI2/6pM3ytEV6tsTY2LQ9C7Gy7wgWxgeH5JVruVLtfioYchrYBFEncEgKMnvmcgYHH4aeokcXJYHMatwlsQTGWcbwLg6v4opw0UR14d5yiOqbIMa4sDqPYCJvbSijOuDiY/pzrKdRuIX7r7nEgcIhSwxy6IBjYWiVIEiJPO1dfXcYWLwgGYQ1F1EASeqpe7RpuAgioqqdIEs8t0vSw+80L9Xv0ogAA1F5Hqt1t7+Cxa+4jol3t8IJpQEDVFlhjsRPDxEN3vj+fgig3vqgkwxapTjHBxAFYDQ68dBlsiPmOv6CXZuxNNn69PdIQTKXkidfmxMr+x3GfJtaI2at5+WJmvr8ymSWodkstipSpmBSDqHDKg+ZyH/1XVaigsxDLES57gGtUojBeDhFf7rzu1x+S2bkydf7kqQfLxskQ9WXSHXjsypk+OKLoKe15Zqo684giIFyYYomdsu1GjhYYxPPWuG+85vjS+YpT84BKfK2LmrG9JoqjRE674rWGtaaaVESKMR/ZJnU+4Zl67oH0YiF0RvtXwb/tfAO9mnPbwI4Nn7MjVqkVFpm7trxZ+HGNuolT/9dQa0ArbSFR+NzJjZSiLQESC1mYfRfi0AY7N3Yzb3AR+LbTCq6/S06YqSmVFLFJCl6UDXusz8Q4FXbYqUHkGQVhQUVbDyZrTnZaJv7JR/yKeqGEs5DoEHNKXW4Pzjffp20iuTClja0wNLwIeIzik418Qeta6EA=
   smtp:
@@ -13,6 +16,6 @@ secret:
 ingress:
   hosts:
     - host: api-development.beep.ovh
-      paths: ['/']
+      paths: ["/"]
 image:
   tag: "06878472-development"

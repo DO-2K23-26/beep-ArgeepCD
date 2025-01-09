@@ -13,6 +13,12 @@ data:
   FRONTEND_URL: '{{ .Values.frontendUrl }}'
   APP_VERSION: '{{ .Chart.AppVersion }}'
   ENVIRONMENT: '{{ .Values.environment }}'
-  {{- if .Values.observability.enabled }}
-  OTLP_ENDPOINT: '{{ .Values.observability.otlp_endpoint }}'
+  {{- if .Values.observability.tempo.enabled }}
+  OTLP_ENDPOINT: '{{ .Values.observability.tempo.otlp_endpoint }}'
+  {{- end }}
+  {{- if .Values.observability.loki.enabled }}
+  LOKI_HOST: '{{ .Values.observability.loki.address }}'
+  {{- if ne .Values.observability.loki.logLevel "" }}
+  LOKI_LOG_LEVEL: '{{ .Values.observability.loki.logLevel }}'
+  {{- end }}
   {{- end }}
