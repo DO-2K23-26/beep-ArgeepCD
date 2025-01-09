@@ -70,6 +70,8 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.smtp.existingSecret }}
                   key: {{ .Values.smtp.passwordKey }}
+            - name: LIMITER_STORE
+              value: "redis"
 
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
