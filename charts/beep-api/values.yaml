@@ -7,8 +7,13 @@ image:
 environment: "prod"
 
 observability:
-  enabled: false
-  otlp_endpoint: 'http://tempo.monitoring.svc.cluster.local:4318/v1/traces'
+  tempo:
+    enabled: false
+    otlp_endpoint: "http://tempo.monitoring.svc.cluster.local:4318/v1/traces"
+  loki:
+    enabled: false
+    address: "http://loki.monitoring.svc.cluster.local:3100"
+    logLevel: ""
 
 service:
   port: 80
@@ -18,8 +23,7 @@ ingress:
   enabled: true
   hosts:
     - host: ""
-      paths: ['/']
-
+      paths: ["/"]
 
 replicaCount: 1
 
@@ -51,7 +55,6 @@ configService: beep-services-config
 app:
   existingSecret: app-secret
   configMap: backend-config
-
 
 frontendUrl: ""
 
