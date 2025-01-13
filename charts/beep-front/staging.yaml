@@ -1,7 +1,13 @@
 image:
   tag: "c8b7ecaf-staging"
 ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-    - host: 'staging.beep.ovh'
+    - host: "staging.beep.ovh"
       paths:
         - /
+  tls:
+    - hosts:
+        - "staging.beep.ovh"
+      secretName: front-staging-beep-tls

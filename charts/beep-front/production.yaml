@@ -1,7 +1,13 @@
 image:
   tag: "1.5.0"
 ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
-    - host: 'beep.ovh'
+    - host: "beep.ovh"
       paths:
         - /
+  tls:
+    - hosts:
+        - "beep.ovh"
+      secretName: front-beep-tls

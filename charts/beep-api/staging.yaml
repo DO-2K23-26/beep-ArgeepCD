@@ -14,8 +14,14 @@ secret:
     port: AgAFe4t4vy9SFtt/Pkz+6mMe0v+m+W6GK4cRqU9xYeuWTE/QSZ6gIV7Nac4z1smtin6vkSm9IqLq+32mAzUDBXG3DD+d+WYxBDSqvDV5FARgyFCI805EqMfjC967SDLjSB4Ok+R3Bw6u5vKBWLIZukcBQRIHjSXjQSTgQHi2qAmbSEht4TXMorpAJAkIfaJAvGCZl5NMOPWefEmUEuasNw92ya0KevZAa7Fc/f1hRX9qqoF1DVPY8bB/ziogs/sdM3UD2g0yAfABh6nrEhzfnjgqhFF0mLoudM+qjMb+Ds/mIFbjkiHckfVrZvQikK/BIQLKAte1CVst5untxhIByMkmNyfJImXuA8mObnQKWBE2MHRSRdi4v4rb25vxbK5BJBrVrNEfHagdU14fw47+jR05yrF5vozbYiy31mfuSJAC7HrSpZMZBTysk3oCxQvomQROxQXGCIhkDUjj+H8xD5gtujtDg/G5CE/OFr/97d9tD5cGKz2q8kZsYyKxc+Sy/gRKqMWUPyIGRxS3xvcTHjxvTR1bi1WXhvawu11lFdIEdNLxDjkZtPZE70BaFWuu0gonyHIUL/0KwJwVkDC634ybjin4Hw5STxniXa+Uxcqn8OSZMwvch7owjZUYu1PzMIzxWT2YJGgcc7hEuQp1sjyIEw2KHE0ZTRA2zsV4Yi/rZ2d5Nq0sz1/wvSVsw5TmsfLSDjE=
     username: AgAsX0RqP8reZ8kvjV2r35d8RH6J8rbya0YI33FiHwUfNk3VeJPbjJaLHTpV+w/qLUudMeEx1M0AKq+ig6GDi6sS1WCYRMfnjUgfxTdUAThJ7V+35ED66E1aMMX3gEK5jkpnJcAqbBCbcs2duhjelRVUTR3pPdTpU6C/Aig/VBRIsV6RXxGfBCxF6d4XP8d6bNmVTY2LoiyA24z8hkSeLmCuRcFuI54fLBO98fe5hFWn6f6s6QvHpjNeql1wAr5tH6jCcwlTs/1BHMkUux6veZ+qVZ9S7V55KGsI8isqjSRiwUxxILwbHLWuzDox/f36lIr2aJ8GzM4RAMJaQRtxwhiP9IkIAqgBynsrInp8F2KuZBoaaRL79wqIZHl/WrzChbGTRyXg4cJBwEe+5oH1h7BKwhsnu4alWcjEL7qbW+UMWqk/qoSJj1EOkfNTfOsdV+LECBbF9TpnG8NaYjhflHdpdwQ7RVCpDAXT6ZGzaeb08ShSEPDG+e3MsHNRf8LifwHC5awvxPaFzlfduQkkDMTxtE5Pe2RUnmCmazkBmi9Hyex0N+63IRr7kbPr4XMumzWSti1W7Lt/tJXZ49wY1A1FYxtWm0xIxOS/x9X121Pru+0QLciFE6E4T6ZxeSbNrbF4hyg9godUxq7lrYLh8ejV2OQwyPMpAajvhgcTO7c3b+8M0+j4VZTXaiRlFBSa1vJBM5GPAY8gJz1ux/PmAYf35jTOHQ/jg72pzdWAW4XY
 ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
     - host: api-staging.beep.ovh
       paths: ["/"]
+  tls:
+    - hosts:
+        - api-staging.beep.ovh
+      secretName: api-staging-beep-tls
 image:
   tag: "1cb88beb-staging"
