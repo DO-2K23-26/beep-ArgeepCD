@@ -3,8 +3,6 @@ image:
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    traefik.ingress.kubernetes.io/router.entrypoints: web
-    traefik.ingress.kubernetes.io/router.middlewares: kube-system-redirectscheme-https@kubernetescrd
   hosts:
     - host: "development.beep.ovh"
       paths:
