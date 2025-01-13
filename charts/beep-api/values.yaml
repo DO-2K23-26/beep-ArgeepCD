@@ -21,9 +21,11 @@ service:
 
 ingress:
   enabled: true
+  annotations: {}
   hosts:
     - host: ""
       paths: ["/"]
+  tls: []
 
 replicaCount: 1
 
