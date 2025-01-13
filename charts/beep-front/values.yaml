@@ -13,12 +13,9 @@ image:
 
 ingress:
   enabled: true
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-  tls:
-    enabled: false
+  annotations: {}
   hosts:
     - host: 'staging.beep.ovh'
       paths:
         - /
+  tls: []

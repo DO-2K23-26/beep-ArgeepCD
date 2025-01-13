@@ -14,8 +14,14 @@ secret:
     username: AgDVWZOzfK+uUp4DM3SX2AiNCPOwO/JoBok9CGHDshZlgKmugT6t6HLTJUwF1UPfrEP1uCvdAEQpsYzCmqgS5maOW+nH8+Mg0F2oQwYFQdKLOw/23lhCqqUU/OoD2QtG6R8R4wMH3LRjkryG4F+00GW2Lo8jpm9zYeQeq2039VItDjwopLyciFQbKUntmf1Ul7jv6FfKdDa/uEj8OEnzP1pd51426+Pua2rYKNPnYSYNVyVsv3fz5G7WM8CL9VrpNlvctuXelQISblGjvsQfkV6ijcz6f4YGBBhCJWttsC0z2KYjlaccS7Al3xM36xHsvFSbo7lrEdji1Y6eCu0hkY8VII4i2MLsmTKnh1HTl1isUiRYd713QuB00sPC89wizqTH0nnT8SMWioLhF2mo4+Y/z6vBJQkw8Iwd/rF+UoaiDAOqxiJNIFlHIUJrRJxtC/66p/WhQ/mQxWxcSpojkYomFu7/zfplzhP6g0QeKvS61NxAgsKT5A48fiqIyrS0PC/vWzH3fYcjGil2BfoGv3+d3ILv98somuw4nJZkPDV2xWTh9Fe3yCjGbrsM66yRfuxfwVmj0sYUIHFG+LeXkeOgMpKijTcGw9a3DJZBbmFoZjEFtE6cuU9LNQMP03Bq3p6pxrHXEyLm2iU3haa3blJ7xCbpokCCBLoieMcpSg2/kOxy7U1kk4Lq8mzw/tv7lEPFwXYF4hki268JDWeUBd7wwIB4mXMMJTB44dsxJKWI
     password: AgDTiOcyyg9ltv053Uc63hBz2VICiBRTXgRGiSYNLs0dXAs3+68H0n8j1+QcITLG0/9Bk4drnGocZJ+kJ7AM0UDYpxZOYADtYAD/gtVVkfWWC7o8JZ5vTzvlOeLcJSw69ucAfJPcBP+4i4JtSxyZsfeQaO10CBtNlTqO6xXVJiw9Nj+2+krdgWL9nBLsW/GBqtI1b/Jyky9JcIj19aXu6iJiit9K4h5WexPyWEzh/8ismnx19FPKCJR5ICLUJhSM8Xb58Jn29ClCIdSpXwXHDJiOCuSxNct74lvznVjCblM1kDlYyEbhkPx7dhqEFOgwVIdbtLU+8kWdO/2q9FnXIg5+vfvrGZ8JodUu8cV/CACtAEpteyOmppIPTUertXsnXVxDw/GpnYlqgtsuoezl7W9GztVa0EFBuRI/ZbdTp1AjeAmvJOP1a5Ye8sAt8pp+r8R3j7NQ8LcnIiRRxiMfN9CimwceDto7nsux1oWowJ7K+7dTaqb/nnBh5NPFh2hOyARfbb9emYBlZOYGkpiDEgnIJTvXjkA5rLU+oYtDgWvEvm0eZ3XGppcIVsaD/I2gjh+eiPanGR8uAFhP/rRdDTVHF18cw28lMpZibM93oVg4UBuk1S4DpV/RVO1i+LQ0GAKYIs2sR3HYJAPh3qqXVZlb0lpf6kSLn9noHN5YOMbn4tAALf+0Vdyx8lqVaQjtU/SJHUp+yFrYwOheNIz1rqF+7q0hkjkuX8Aaif81ukxJAo4njs3KcqbM
 ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   hosts:
     - host: api-development.beep.ovh
       paths: ["/"]
+  tls:
+    - hosts:
+        - api-development.beep.ovh
+      secretName: api-development-beep-tls
 image:
   tag: "882c226a-development"
