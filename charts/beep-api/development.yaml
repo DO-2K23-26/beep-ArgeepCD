@@ -24,4 +24,4 @@ ingress:
         - api-development.beep.ovh
       secretName: api-development-beep-tls
 image:
-  tag: "882c226a-development"
+  tag: "860b930e-development"
