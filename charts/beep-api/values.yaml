@@ -4,6 +4,8 @@ image:
   repository: milou666/beep-api
   tag: ""
 
+imagePullSecrets: []
+
 environment: "prod"
 
 observability:

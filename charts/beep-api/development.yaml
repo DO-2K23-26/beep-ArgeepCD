@@ -23,5 +23,8 @@ ingress:
     - hosts:
         - api-development.beep.ovh
       secretName: api-development-beep-tls
+imagePullSecrets:
+  - name: harbor-registry
 image:
+  repository: registry.beep.ovh/beep/api
   tag: "a5ab10fc-development"
