@@ -27,4 +27,4 @@ imagePullSecrets:
   - name: harbor-registry
 image:
   repository: registry.beep.ovh/beep/api
-  tag: "a5ab10fc-development"
+  tag: "657cf6b4-development"
