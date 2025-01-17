@@ -1,10 +1,8 @@
 image:
   pullPolicy: Always
   port: 80
-  repository: milou666/beep-api
+  repository: registry.beep.ovh/beep/api
   tag: ""
-
-imagePullSecrets: []
 
 environment: "prod"
 
@@ -34,6 +32,9 @@ replicaCount: 1
 # Values below should be the same for all environments or they can be
 # provided by the infrastructure
 # Unless you know what you are doing, you should not change these values
+imagePullSecrets:
+  - name: harbor-registry
+
 smtp:
   existingSecret: smtp-secret
   hostKey: host
