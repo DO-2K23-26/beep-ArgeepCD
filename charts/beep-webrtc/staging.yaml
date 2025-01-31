@@ -1,0 +1,16 @@
+image:
+  tag: "5334fd28-staging"
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  hosts:
+    - host: "voice-staging.beep.ovh"
+      paths:
+        - /
+  tls:
+    - hosts:
+        - "voice-staging.beep.ovh"
+      secretName: voice-staging-beep-tls
+
+env:
+  phxHost: "voice-staging.beep.ovh"

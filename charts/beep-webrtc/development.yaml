@@ -1,0 +1,16 @@
+image:
+  tag: ""
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  hosts:
+    - host: "voice-development.beep.ovh"
+      paths:
+        - /
+  tls:
+    - hosts:
+        - "voice-development.beep.ovh"
+      secretName: voice-development-beep-tls
+
+env:
+  phxHost: "voice-development.beep.ovh"

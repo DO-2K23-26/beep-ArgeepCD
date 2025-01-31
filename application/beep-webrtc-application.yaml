@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: beep-webrtc-applicationset
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - environment: development
+          - environment: staging
+          - environment: production
+  template:
+    metadata:
+      name: 'webrtc-{{environment}}'
+    spec:
+      project: beep
+      source:
+        repoURL: git@gitlab.polytech.umontpellier.fr:beep/argeepcd.git
+        targetRevision: HEAD
+        path: charts/beep-webrtc
+        helm:
+          releaseName: beep-webrtc-{{environment}}
+          valueFiles:
+            - '{{environment}}.yaml'
+      destination:
+        server: https://162.38.112.211:6443
+        namespace: 'beep-{{environment}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
