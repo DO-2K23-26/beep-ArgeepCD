@@ -1,5 +1,5 @@
 image:
-  tag: "cad65d1f-development"
+  tag: "e757925a-development"
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
