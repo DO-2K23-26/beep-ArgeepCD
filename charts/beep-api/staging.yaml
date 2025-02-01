@@ -24,4 +24,4 @@ ingress:
         - api-staging.beep.ovh
       secretName: api-staging-beep-tls
 image:
-  tag: "8fcaf6dd-staging"
+  tag: "57e677d8-staging"
