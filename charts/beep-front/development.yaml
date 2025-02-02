@@ -1,5 +1,5 @@
 image:
-  tag: "ee2c8e01-development"
+  tag: "08b52778-development"
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
