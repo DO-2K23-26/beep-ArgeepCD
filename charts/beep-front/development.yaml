@@ -1,5 +1,5 @@
 image:
-  tag: "91a76493-development"
+  tag: "ecab2418-development"
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
