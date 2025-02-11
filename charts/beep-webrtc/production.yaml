@@ -13,3 +13,4 @@ ingress:
       secretName: voice-beep-tls
 env:
   phxHost: "voice.beep.ovh"
+  authServiceUrl: "https://api.beep.ovh"
