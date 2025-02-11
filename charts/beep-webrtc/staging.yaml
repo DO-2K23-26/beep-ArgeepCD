@@ -1,5 +1,5 @@
 image:
-  tag: "a3de7972-staging"
+  tag: "c6fa1adc-staging"
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
