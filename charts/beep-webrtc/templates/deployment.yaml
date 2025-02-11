@@ -35,6 +35,8 @@ spec:
             value: {{ .Values.env.secretKey }}
           - name: PHX_HOST
             value: {{ .Values.env.phxHost }}
+          - name: AUTH_SERVICE_URL
+            value: {{ .Values.env.authServiceUrl }}
           - name: ADMIN_USERNAME
             value: {{ .Values.env.adminUsername }}
           - name: ADMIN_PASSWORD
