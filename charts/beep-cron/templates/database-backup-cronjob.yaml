@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: database-backup
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: backup-container
+            image: registry.gitlab.com/plannify-group/plannify-backup:1.1.5
+            envFrom:
+            - configMapRef:
+                name: {{ .Values.configService }}
+            env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.postgresql.existingSecret }}
+                  key: {{ .Values.postgresql.passwordKey }}
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Values.configService }}
+                  key: DB_DATABASE
+            - name: DB_ENV
+              value: {{ .Values.env }}
+            - name: BACKUP_TYPE
+              value: "daily"
+            - name: BACKUP_MAX_BEFORE_DELETE
+              value: "14"
+            - name: CF_ACCOUNT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: cloudflare-secret
+                  key: CF_ACCOUNT_ID
+            - name: CF_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cloudflare-secret
+                  key: CF_ACCESS_TOKEN
+            - name: CF_SECRET_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cloudflare-secret
+                  key: CF_SECRET_ACCESS_TOKEN
+            - name: CF_BUCKET
+              valueFrom:
+                secretKeyRef:
+                  name: cloudflare-secret
+                  key: CF_BUCKET
+          restartPolicy: OnFailure

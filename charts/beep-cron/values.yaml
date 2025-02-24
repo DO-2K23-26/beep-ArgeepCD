@@ -1,0 +1,7 @@
+configService: beep-services-config
+
+env: ""
+
+postgresql:
+  existingSecret: postgresql-secret
+  passwordKey: postgres-password
