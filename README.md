@@ -4,7 +4,7 @@
 
 Sealed Secrets is a tool for encrypting Kubernetes secrets into a format that can be safely stored in Git repositories. It allows you to manage sensitive information, such as passwords and API keys, without exposing them in your source code. Sealed Secrets uses a public/private key pair to encrypt and decrypt secrets, ensuring that only authorized users can access the sensitive data.
 
-## Usage
+### Usage
 
 To use Sealed Secrets, you need to install the `kubeseal` CLI tool and have the correct kubernetes cluster configured. The basic workflow involves creating a Kubernetes Secret, sealing it with `kubeseal`, and then applying the sealed secret to your cluster.
 
