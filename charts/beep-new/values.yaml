@@ -8,7 +8,7 @@ service:
 image:
   pullPolicy: Always
   port: 8080
-  repository: registry.beep.ovh/beep/front
+  repository: registry.beep.ovh/beep/client
   tag: ""
 
 ingress:
