@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: beep-front-applicationset
+  name: beep-new-applicationset
   namespace: argocd
 spec:
   generators:
