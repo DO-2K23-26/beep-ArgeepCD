@@ -1,0 +1,31 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: beep-front-applicationset
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - environment: production
+  template:
+    metadata:
+      name: 'beep-new-{{environment}}'
+    spec:
+      project: beep
+      source:
+        repoURL: git@gitlab.polytech.umontpellier.fr:beep/argeepcd.git
+        targetRevision: HEAD
+        path: charts/beep-new
+        helm:
+          releaseName: beep-new-{{environment}}
+          valueFiles:
+            - '{{environment}}.yaml'
+      destination:
+        server: https://162.38.112.211:6443
+        namespace: 'beep-{{environment}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

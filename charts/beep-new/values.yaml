@@ -1,0 +1,21 @@
+replicaCount: 1
+imagePullSecrets:
+  - name: harbor-registry
+resources: {}
+service:
+  type: ClusterIP
+  port: 80
+image:
+  pullPolicy: Always
+  port: 8080
+  repository: registry.beep.ovh/beep/front
+  tag: ""
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: 'staging.beep.ovh'
+      paths:
+        - /
+  tls: []
