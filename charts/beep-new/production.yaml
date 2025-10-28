@@ -1,5 +1,5 @@
 image:
-  tag: "55f64311-production"
+  tag: "369c8574-production"
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
